@@ -1,0 +1,93 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="cctv1" tvg-logo="cctv1.png",CCTV-1HD
+http://192.168.1.1:4022/rtp/239.254.96.96:8550
+#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV2
+http://192.168.1.1:4022/rtp/239.254.96.154:8998
+#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV3
+http://192.168.1.1:4022/rtp/239.254.96.237:9502
+#EXTINF:-1 tvg-id="cctv4" tvg-logo="cctv4.png",CCTV4
+http://192.168.1.1:4022/rtp/239.254.96.155:9004
+#EXTINF:-1 tvg-id="cctv5" tvg-logo="cctv5.png",CCTV5
+http://192.168.1.1:4022/rtp/239.254.96.238:9508
+#EXTINF:-1 tvg-id="cctv5plus" tvg-logo="cctv5plus.png",CCTV-5+HD
+http://192.168.1.1:4022/rtp/239.254.96.234:9484
+#EXTINF:-1 tvg-id="cctv6" tvg-logo="cctv6.png",CCTV6
+http://192.168.1.1:4022/rtp/239.254.96.239:9514
+#EXTINF:-1 tvg-id="cctv7" tvg-logo="cctv7.png",CCTV7
+http://192.168.1.1:4022/rtp/239.254.96.156:9130
+#EXTINF:-1 tvg-id="cctv8" tvg-logo="cctv8.png",CCTV8
+http://192.168.1.1:4022/rtp/239.254.96.240:9520
+#EXTINF:-1 tvg-id="cctv9" tvg-logo="cctv9.png",CCTV9
+http://192.168.1.1:4022/rtp/239.254.96.157:9016
+#EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV10
+http://192.168.1.1:4022/rtp/239.254.96.158:9022
+#EXTINF:-1 tvg-id="cctv11" tvg-logo="cctv11.png",CCTV11
+http://192.168.1.1:4022/rtp/239.254.96.159:9028
+#EXTINF:-1 tvg-id="cctv12" tvg-logo="cctv12.png",CCTV12
+http://192.168.1.1:4022/rtp/239.254.96.160:9034
+#EXTINF:-1 tvg-id="hubei" tvg-logo="hubei.png",湖北卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.115:8664
+#EXTINF:-1 tvg-id="hunan" tvg-logo="hunan.png",湖南卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.139:8908
+#EXTINF:-1 tvg-id="zhejiang" tvg-logo="zhejiang.png",浙江卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.143:8932
+#EXTINF:-1 tvg-id="jiangsu" tvg-logo="jiangsu.png",江苏卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.144:8938
+#EXTINF:-1 tvg-id="dongfang" tvg-logo="dongfang.png",东方卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.142:8926
+#EXTINF:-1 tvg-id="btv1" tvg-logo="btv1.png",北京卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.141:8920
+#EXTINF:-1 tvg-id="guangdong" tvg-logo="guangdong.png",广东卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.140:8914
+#EXTINF:-1 tvg-id="shenzhen" tvg-logo="shenzhen.png",深圳卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.137:8896
+#EXTINF:-1 tvg-id="heilongjiang" tvg-logo="heilongjiang.png",黑龙江卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.138:8902
+#EXTINF:-1 tvg-id="tianjin" tvg-logo="tianjin.png",天津卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.68:10048
+#EXTINF:-1 tvg-id="shandong" tvg-logo="shandong.png",山东卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.69:10054
+#EXTINF:-1 tvg-id="anhui" tvg-logo="anhui.png",安徽卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.70:10060
+#EXTINF:-1 tvg-id="liaoning" tvg-logo="liaoning.png",辽宁卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.71:10066
+#EXTINF:-1,湖北公共HD
+http://192.168.1.1:4022/rtp/239.69.1.40:9880
+#EXTINF:-1,湖北经视HD
+http://192.168.1.1:4022/rtp/239.69.1.41:9886
+#EXTINF:-1,湖北综合HD
+http://192.168.1.1:4022/rtp/239.69.1.42:9892
+#EXTINF:-1,湖北垄上HD
+http://192.168.1.1:4022/rtp/239.69.1.43:9898
+#EXTINF:-1,IPTV5+HD
+http://192.168.1.1:4022/rtp/239.69.1.117:10340
+#EXTINF:-1,湖北经视
+http://192.168.1.1:4022/rtp/239.254.96.178:9148
+#EXTINF:-1,湖北综合
+http://192.168.1.1:4022/rtp/239.254.96.177:9142
+#EXTINF:-1,湖北垄上
+http://192.168.1.1:4022/rtp/239.254.96.184:9184
+#EXTINF:-1,湖北影视
+http://192.168.1.1:4022/rtp/239.254.96.182:9172
+#EXTINF:-1,湖北公共
+http://192.168.1.1:4022/rtp/239.254.96.179:9154
+#EXTINF:-1,湖北教育
+http://192.168.1.1:4022/rtp/239.254.96.180:9160
+#EXTINF:-1,湖北生活
+http://192.168.1.1:4022/rtp/239.254.96.181:9166
+#EXTINF:-1,武汉一套
+http://192.168.1.1:4022/rtp/239.254.96.228:9448
+#EXTINF:-1,武汉二套
+http://192.168.1.1:4022/rtp/239.254.96.229:9454
+#EXTINF:-1,武汉生活
+http://192.168.1.1:4022/rtp/239.69.1.2:9652
+#EXTINF:-1,武汉经济
+http://192.168.1.1:4022/rtp/239.69.1.3:9658
+#EXTINF:-1,武汉文体
+http://192.168.1.1:4022/rtp/239.69.1.4:9664
+#EXTINF:-1,武汉电视台
+http://192.168.1.1:4022/rtp/239.69.1.5:9670
+#EXTINF:-1,武汉少儿
+http://192.168.1.1:4022/rtp/239.69.1.6:9676
+#EXTINF:-1,武汉教育
+http://192.168.1.1:4022/rtp/239.69.1.60:10000
