@@ -1,9 +1,10 @@
 #-*- coding: utf-8 -*-                                                                                                                                  
 import re
 import requests
+from lxml import html
 from datetime import datetime
 
-def getChannel(fhandle, channelID):
+def getChannelCNTV(fhandle, channelID):
     '''
     通过央视cntv接口，获取央视，和上星卫视的节目单，写入同目录下epg.xml文件，文件格式符合xmltv标准
     接口返回的json转换成dict后类似如下
@@ -40,9 +41,70 @@ def getChannel(fhandle, channelID):
             st = datetime.fromtimestamp(detail['st']).strftime('%Y%m%d%H%M')+'00'
             et = datetime.fromtimestamp(detail['et']).strftime('%Y%m%d%H%M')+'00'
 
-            fhandle.write('    <programme start="%s" stop="%s" channel="%s">\n' % (st, et, channelID[n]))
+            fhandle.write('    <programme start="%s -0800" stop="%s -0800" channel="%s">\n' % (st, et, channelID[n]))
             fhandle.write('        <title lang="cn">%s</title>\n' % detail['t'])
             fhandle.write('    </programme>\n')
+
+def getChannelTVsou(fhandle, channelID):
+    '''
+    获取TVSOU的节目单和节目信息，先获取所有台的ID，再通过ID获取每个台每天节目单
+
+    '''
+    #获取tvsou每个台的地址
+    session = requests.Session()
+    base_url = 'https://www.tvsou.com'
+    api_url = 'https://www.tvsou.com/epg/%s/' % channelID
+    headers = {'Host':'www.tvsou.com','User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0'}
+    #获取所有电视台的url的xpath
+    channels_rule = '/html/body/div[3]/div[3]/div[3]/div[1]/div[1]/ul/li/a/@href'
+    channelname_rule = '/html/body/div[3]/div[2]/span[2]/text()'
+    epgname_rule = '/html/body/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/ol/li/@data-name'
+    epgtime_rule = '/html/body/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/ol/li/@data-mainstars'
+    epgcontenturl_rule = '/html/body/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/ol/li/@data-url'
+    epgcontentdesc_url = '/html/body/div[3]/div[1]/div[1]/div/div/div/pre/text()'
+
+    #获取所有电视台的URL，方便抓取
+    channels_html= session.get(api_url,headers=headers).text
+    tree = html.fromstring(channels_html)
+    channels_url = tree.xpath(channels_rule)
+
+    #按照获取的url抓取电视台节目单
+    for channel in channels_url:
+        c_html = session.get(base_url + channel,headers=headers).text
+        tree = html.fromstring(c_html)
+        #epgname可以直接使用，epgtime和epgcontenturl需要转换
+        channelid = channel.split('?')[0].split('/')[-1]
+        #channelname = tree.xpath(channelname_rule)[0].strip().split(' ')[0].split('台-')[1]
+        channelname = re.match(r'.*?-(.*) 节目单',tree.xpath(channelname_rule)[0].strip()).group(1)
+        epgname = tree.xpath(epgname_rule)
+        epgtime = tree.xpath(epgtime_rule)
+        epgcontenturl = tree.xpath(epgcontenturl_rule)
+
+        #转换epg节目单的content为节目真实url
+        epgcontenturl = [base_url+i.strip().replace('show','story') for i in epgcontenturl]
+        epgstarttime = [datetime.now().strftime('%Y%m%d')+j[0].replace(':','').strip() for j in [i.split('-') for i in epgtime]]
+        epgstoptime = [datetime.now().strftime('%Y%m%d')+j[1].replace(':','').strip() for j in [i.split('-') for i in epgtime]]
+
+        #write channel id info
+        fhandle.write('    <channel id="%s">\n' % channelid)
+        fhandle.write('        <display-name lang="cn">%s</display-name>\n' % channelname)
+        fhandle.write('    </channel>\n')
+
+        #write programe
+        for n in range(len(epgname)):
+
+            #获取节目的描述desc，需要额外在抓取网页的描述信息
+            #desc_html = session.get(epgcontenturl[n][0:-1],headers=headers).text
+            #tree = html.fromstring(desc_html)
+            #desc_content = tree.xpath(epgcontentdesc_url[0])
+            #print(desc_content)
+
+
+            fhandle.write('    <programme start="%s" stop="%s" channel="%s">\n' % (epgstarttime[n], epgstoptime[n], channelid))
+            fhandle.write('        <title lang="cn">%s</title>\n' % epgname[n].strip())
+            #fhandle.write('        <desc lang="cn">%s</desc>\n' % epgname[n].strip())
+            fhandle.write('    </programme>\n')
+
 
 cctv_channel = ['cctv1','cctv2','cctv3','cctv4','cctv5','cctv5plus','cctv6','cctv7','cctv8','cctvjilu','cctv10','cctv11','cctv12']
 sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong','shenzhen','heilongjiang','tianjin','shandong','anhui','liaoning']
@@ -50,6 +112,9 @@ sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong
 with open('epg.xml','at') as fhandle:
     fhandle.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     fhandle.write('<tv>\n')
-    getChannel(fhandle, cctv_channel)
-    getChannel(fhandle, sat_channel)
+    getChannelTVsou(fhandle, 'yangshi')
+    getChannelTVsou(fhandle, 'weishi')
+#    getChannel(fhandle, cctv_channel)
+#    getChannel(fhandle, sat_channel)
     fhandle.write('</tv>')
+
