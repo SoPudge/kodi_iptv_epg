@@ -1,0 +1,61 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="CCTV-1" tvg-logo="CCTV-1.png",CCTV-1HD
+http://192.168.1.1:4022/rtp/239.254.96.96:8550
+#EXTINF:-1 tvg-id="CCTV-2" tvg-logo="CCTV-2.png",CCTV2
+http://192.168.1.1:4022/rtp/239.254.96.154:8998
+#EXTINF:-1 tvg-id="CCTV-2" tvg-logo="CCTV-2.png",CCTV3
+http://192.168.1.1:4022/rtp/239.254.96.237:9502
+#EXTINF:-1 tvg-id="CCTV-4" tvg-logo="CCTV-4.png",CCTV4
+http://192.168.1.1:4022/rtp/239.254.96.155:9004
+#EXTINF:-1 tvg-id="CCTV-5" tvg-logo="CCTV-5.png",CCTV5
+http://192.168.1.1:4022/rtp/239.254.96.238:9508
+#EXTINF:-1 tvg-id="CCTV-5+" tvg-logo="CCTV-5+.png",CCTV-5+HD
+http://192.168.1.1:4022/rtp/239.254.96.234:9484
+#EXTINF:-1 tvg-id="CCTV-6" tvg-logo="CCTV-6.png",CCTV6
+http://192.168.1.1:4022/rtp/239.254.96.239:9514
+#EXTINF:-1 tvg-id="CCTV-7" tvg-logo="CCTV-7.png",CCTV7
+http://192.168.1.1:4022/rtp/239.254.96.156:9130
+#EXTINF:-1 tvg-id="CCTV-8" tvg-logo="CCTV-8.png",CCTV8
+http://192.168.1.1:4022/rtp/239.254.96.240:9520
+#EXTINF:-1 tvg-id="CCTV-9" tvg-logo="CCTV-9.png",CCTV9
+http://192.168.1.1:4022/rtp/239.254.96.157:9016
+#EXTINF:-1 tvg-id="CCTV-10" tvg-logo="CCTV-10.png",CCTV10
+http://192.168.1.1:4022/rtp/239.254.96.158:9022
+#EXTINF:-1 tvg-id="CCTV-11" tvg-logo="CCTV-11.png",CCTV11
+http://192.168.1.1:4022/rtp/239.254.96.159:9028
+#EXTINF:-1 tvg-id="CCTV-12" tvg-logo="CCTV-12.png",CCTV12
+http://192.168.1.1:4022/rtp/239.254.96.160:9034
+#EXTINF:-1 tvg-id="HBTV-1" tvg-logo="HBTV-1.png",湖北卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.115:8664
+#EXTINF:-1 tvg-id="HNTV-1" tvg-logo="HNTV-1.png",湖南卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.139:8908
+#EXTINF:-1 tvg-id="ZJTV-1" tvg-logo="ZJTV-1.png",浙江卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.143:8932
+#EXTINF:-1 tvg-id="JSTV-1" tvg-logo="JSTV-1.png",江苏卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.144:8938
+#EXTINF:-1 tvg-id="SMG" tvg-logo="SMG.png",东方卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.142:8926
+#EXTINF:-1 tvg-id="BTV-1" tvg-logo="BTV-1.png",北京卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.141:8920
+#EXTINF:-1 tvg-id="GDTV-1" tvg-logo="GDTV-1.png",广东卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.140:8914
+#EXTINF:-1 tvg-id="SHENZHENTV-1" tvg-logo="SHENZHENTV-1.png",深圳卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.137:8896
+#EXTINF:-1 tvg-id="HLJTV-1" tvg-logo="HLJTV-1.png",黑龙江卫视HD
+http://192.168.1.1:4022/rtp/239.254.96.138:8902
+#EXTINF:-1 tvg-id="TJTV-1" tvg-logo="TJTV-1.png",天津卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.68:10048
+#EXTINF:-1 tvg-id="SDTV-1" tvg-logo="SDTV-1.png",山东卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.69:10054
+#EXTINF:-1 tvg-id="AHTV-1" tvg-logo="AHTV-1.png",安徽卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.70:10060
+#EXTINF:-1 tvg-id="LNTV-1" tvg-logo="LNTV-1.png",辽宁卫视HD
+http://192.168.1.1:4022/rtp/239.69.1.71:10066
+#EXTINF:-1 tvg-id="HBTV-gonggongxinwen" tvg-logo="HBTV-gonggongxinwen.png",湖北公共HD
+http://192.168.1.1:4022/rtp/239.69.1.40:9880
+#EXTINF:-1 tvg-id="HBTV-jingji" tvg-logo="HBTV-jingji.png",湖北经视HD
+http://192.168.1.1:4022/rtp/239.69.1.41:9886
+#EXTINF:-1 tvg-id="HBTV-zonghe" tvg-logo="HBTV-zonghe.png",湖北综合HD
+http://192.168.1.1:4022/rtp/239.69.1.42:9892
+#EXTINF:-1,IPTV5+HD
+http://192.168.1.1:4022/rtp/239.69.1.117:10340
