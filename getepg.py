@@ -41,7 +41,7 @@ def getChannelCNTV(fhandle, channelID):
             st = datetime.fromtimestamp(detail['st']).strftime('%Y%m%d%H%M')+'00'
             et = datetime.fromtimestamp(detail['et']).strftime('%Y%m%d%H%M')+'00'
 
-            fhandle.write('    <programme start="%s -0800" stop="%s -0800" channel="%s">\n' % (st, et, channelID[n]))
+            fhandle.write('    <programme start="%s" stop="%s" channel="%s">\n' % (st, et, channelID[n]))
             fhandle.write('        <title lang="cn">%s</title>\n' % detail['t'])
             fhandle.write('    </programme>\n')
 
@@ -112,9 +112,9 @@ sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong
 with open('epg.xml','at') as fhandle:
     fhandle.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     fhandle.write('<tv>\n')
-    getChannelTVsou(fhandle, 'yangshi')
-    getChannelTVsou(fhandle, 'weishi')
-#    getChannel(fhandle, cctv_channel)
-#    getChannel(fhandle, sat_channel)
+#    getChannelTVsou(fhandle, 'yangshi')
+#    getChannelTVsou(fhandle, 'weishi')
+    getChannel(fhandle, cctv_channel)
+    getChannel(fhandle, sat_channel)
     fhandle.write('</tv>')
 
