@@ -17,7 +17,7 @@ http://192.168.1.1:4022/rtp/239.254.96.239:9514
 http://192.168.1.1:4022/rtp/239.254.96.156:9130
 #EXTINF:-1 tvg-id="cctv8" tvg-logo="cctv8.png",CCTV8
 http://192.168.1.1:4022/rtp/239.254.96.240:9520
-#EXTINF:-1 tvg-id="cctv9" tvg-logo="cctv9.png",CCTV9
+#EXTINF:-1 tvg-id="cctvjilu" tvg-logo="cctv9.png",CCTV9
 http://192.168.1.1:4022/rtp/239.254.96.157:9016
 #EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV10
 http://192.168.1.1:4022/rtp/239.254.96.158:9022
