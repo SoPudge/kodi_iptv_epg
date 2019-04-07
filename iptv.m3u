@@ -2,29 +2,29 @@
 #EXTINF:-1 tvg-id="cctv1" tvg-logo="cctv1.png",CCTV-1HD
 http://192.168.1.1:4022/rtp/239.254.96.96:8550
 #EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV2
-http://192.168.1.1:4022/rtp/239.254.96.154:8998
+http://192.168.1.1:4022/rtp/239.69.1.102:10250
 #EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV3
-http://192.168.1.1:4022/rtp/239.254.96.237:9502
+http://192.168.1.1:4022/rtp/239.69.1.122:10370
 #EXTINF:-1 tvg-id="cctv4" tvg-logo="cctv4.png",CCTV4
 http://192.168.1.1:4022/rtp/239.254.96.155:9004
 #EXTINF:-1 tvg-id="cctv5" tvg-logo="cctv5.png",CCTV5
-http://192.168.1.1:4022/rtp/239.254.96.238:9508
+http://192.168.1.1:4022/rtp/239.69.1.123:10376
 #EXTINF:-1 tvg-id="cctv5plus" tvg-logo="cctv5plus.png",CCTV-5+HD
 http://192.168.1.1:4022/rtp/239.254.96.234:9484
 #EXTINF:-1 tvg-id="cctv6" tvg-logo="cctv6.png",CCTV6
-http://192.168.1.1:4022/rtp/239.254.96.239:9514
+http://192.168.1.1:4022/rtp/239.69.1.124:10382
 #EXTINF:-1 tvg-id="cctv7" tvg-logo="cctv7.png",CCTV7
-http://192.168.1.1:4022/rtp/239.254.96.156:9130
+http://192.168.1.1:4022/rtp/239.69.1.103:10256
 #EXTINF:-1 tvg-id="cctv8" tvg-logo="cctv8.png",CCTV8
-http://192.168.1.1:4022/rtp/239.254.96.240:9520
+http://192.168.1.1:4022/rtp/239.69.1.125:10388
 #EXTINF:-1 tvg-id="cctvjilu" tvg-logo="cctv9.png",CCTV9
-http://192.168.1.1:4022/rtp/239.254.96.157:9016
+http://192.168.1.1:4022/rtp/239.69.1.104:10262
 #EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV10
 http://192.168.1.1:4022/rtp/239.254.96.158:9022
 #EXTINF:-1 tvg-id="cctv11" tvg-logo="cctv11.png",CCTV11
 http://192.168.1.1:4022/rtp/239.254.96.159:9028
 #EXTINF:-1 tvg-id="cctv12" tvg-logo="cctv12.png",CCTV12
-http://192.168.1.1:4022/rtp/239.254.96.160:9034
+http://192.168.1.1:4022/rtp/239.69.1.106:10274
 #EXTINF:-1 tvg-id="hubei" tvg-logo="hubei.png",湖北卫视HD
 http://192.168.1.1:4022/rtp/239.254.96.115:8664
 #EXTINF:-1 tvg-id="hunan" tvg-logo="hunan.png",湖南卫视HD

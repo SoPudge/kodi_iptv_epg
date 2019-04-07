@@ -114,7 +114,7 @@ with open('epg.xml','at') as fhandle:
     fhandle.write('<tv>\n')
 #    getChannelTVsou(fhandle, 'yangshi')
 #    getChannelTVsou(fhandle, 'weishi')
-    getChannel(fhandle, cctv_channel)
-    getChannel(fhandle, sat_channel)
+    getChannelCNTV(fhandle, cctv_channel)
+    getChannelCNTV(fhandle, sat_channel)
     fhandle.write('</tv>')
 
