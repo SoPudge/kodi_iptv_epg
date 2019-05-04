@@ -1,29 +1,29 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="cctv1" tvg-logo="cctv1.png",CCTV-1HD
 http://192.168.1.1:4022/rtp/239.254.96.96:8550
-#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV2
+#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV-2HD
 http://192.168.1.1:4022/rtp/239.69.1.102:10250
-#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV3
+#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV-3HD
 http://192.168.1.1:4022/rtp/239.69.1.122:10370
-#EXTINF:-1 tvg-id="cctv4" tvg-logo="cctv4.png",CCTV4
-http://192.168.1.1:4022/rtp/239.254.96.155:9004
-#EXTINF:-1 tvg-id="cctv5" tvg-logo="cctv5.png",CCTV5
+#EXTINF:-1 tvg-id="cctv4" tvg-logo="cctv4.png",CCTV-4HD
+http://192.168.1.1:4022/rtp/239.69.1.138:10466
+#EXTINF:-1 tvg-id="cctv5" tvg-logo="cctv5.png",CCTV-5HD
 http://192.168.1.1:4022/rtp/239.69.1.123:10376
 #EXTINF:-1 tvg-id="cctv5plus" tvg-logo="cctv5plus.png",CCTV-5+HD
 http://192.168.1.1:4022/rtp/239.254.96.234:9484
-#EXTINF:-1 tvg-id="cctv6" tvg-logo="cctv6.png",CCTV6
+#EXTINF:-1 tvg-id="cctv6" tvg-logo="cctv6.png",CCTV-6HD
 http://192.168.1.1:4022/rtp/239.69.1.124:10382
-#EXTINF:-1 tvg-id="cctv7" tvg-logo="cctv7.png",CCTV7
+#EXTINF:-1 tvg-id="cctv7" tvg-logo="cctv7.png",CCTV-7HD
 http://192.168.1.1:4022/rtp/239.69.1.103:10256
-#EXTINF:-1 tvg-id="cctv8" tvg-logo="cctv8.png",CCTV8
+#EXTINF:-1 tvg-id="cctv8" tvg-logo="cctv8.png",CCTV-8HD
 http://192.168.1.1:4022/rtp/239.69.1.125:10388
-#EXTINF:-1 tvg-id="cctvjilu" tvg-logo="cctv9.png",CCTV9
+#EXTINF:-1 tvg-id="cctvjilu" tvg-logo="cctv9.png",CCTV-9HD
 http://192.168.1.1:4022/rtp/239.69.1.104:10262
-#EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV10
-http://192.168.1.1:4022/rtp/239.254.96.158:9022
-#EXTINF:-1 tvg-id="cctv11" tvg-logo="cctv11.png",CCTV11
+#EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV-10HD
+http://192.168.1.1:4022/rtp/239.69.1.105:10268
+#EXTINF:-1 tvg-id="cctv11" tvg-logo="cctv11.png",CCTV-11HD
 http://192.168.1.1:4022/rtp/239.254.96.159:9028
-#EXTINF:-1 tvg-id="cctv12" tvg-logo="cctv12.png",CCTV12
+#EXTINF:-1 tvg-id="cctv12" tvg-logo="cctv12.png",CCTV-12HD
 http://192.168.1.1:4022/rtp/239.69.1.106:10274
 #EXTINF:-1 tvg-id="hubei" tvg-logo="hubei.png",湖北卫视HD
 http://192.168.1.1:4022/rtp/239.254.96.115:8664
