@@ -4,6 +4,23 @@ import requests
 from lxml import html
 from datetime import datetime
 
+cctv_channel = ['cctv1','cctv2','cctv3','cctv4','cctv5','cctv5plus','cctv6','cctv7','cctv8','cctvjilu','cctv10','cctv11','cctv12']
+cctv_channel_tvsou = ['cctv-1','cctv-2','cctv-3','cctv-4','cctv-5','cctv5+','cctv-6','cctv-7','cctv-8','cctv-9','cctv-10','cctv-11','cctv-12']
+cctv_channel_tvmining = {'CCTV1HD':['cctv1','CCTV-1 HD'], 'CCTV2HD':['cctv2','CCTV-2 HD'], 'CCTV3HD':['cctv3','CCTV-3 HD'], \
+        'CCTV4HD':['cctv4','CCTV-4 HD'], 'CCTV5HD':['cctv5','CCTV-5 HD'], 'CCTV5AHD':['cctv5plus','CCTV-5+ HD'], \
+        'CCTV6HD':['cctv6','CCTV-6 HD'], 'CCTV7HD':['cctv7','CCTV-7 HD'], 'CCTV8HD':['cctv8','CCTV-8 HD'], \
+        'CCTV9HD':['cctv9','CCTV-9 HD'], 'CCTV10HD':['cctv10','CCTV-10 HD'], 'CCTV11HD':['cctv11','CCTV-11 HD'],\
+        'CCTV12HD':['cctv12','CCTV-12 HD']}
+
+sat_channel_tvmining = {'HuBeiHD':['hubei','湖北卫视 HD'],'HuNanHD':['hunan','湖南卫视 HD'],'ZheJiangHD':['zhejiang','浙江卫视 HD'], \
+        'JiangSuHD':['jiangsu','江苏卫视 HD'],'SHDongFangHD':['dongfang','东方卫视 HD'],'BTV1':['btv1','北京卫视 HD'], \
+        'GuangDongHD':['guangdong','广东卫视 HD'],'ShengZhengHD':['shenzhen','深圳卫视 HD'], 'HeiLongJiangHD':['heilongjiang','黑龙江卫视 HD'], \
+        'TianJingHD':['tianjin','天津卫视 HD'],'ShanDongHD':['shandong','山东卫视 HD'],'AnHuiHD':['anhui','安徽卫视 HD'], \
+        'LiaoNingHD':['liaoning','辽宁卫视 HD']}
+
+sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong','shenzhen','heilongjiang','tianjin','shandong','anhui','liaoning']
+sat_channel_tvsou = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong','shenzhen','heilongjiang','tianjin','shandong','anhui','liaoning']
+
 def getChannelCNTV(fhandle, channelID):
     '''
     通过央视cntv接口，获取央视，和上星卫视的节目单，写入同目录下epg.xml文件，文件格式符合xmltv标准
@@ -105,16 +122,48 @@ def getChannelTVsou(fhandle, channelID):
             #fhandle.write('        <desc lang="cn">%s</desc>\n' % epgname[n].strip())
             fhandle.write('    </programme>\n')
 
+def getChannelTVmining(fhandle,channelID):
+    '''
+    获取tvmining的电子节目单，给出的xml格式，直接转换成json后组合成标准节目单即可
+    '''
 
-cctv_channel = ['cctv1','cctv2','cctv3','cctv4','cctv5','cctv5plus','cctv6','cctv7','cctv8','cctvjilu','cctv10','cctv11','cctv12']
-sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong','shenzhen','heilongjiang','tianjin','shandong','anhui','liaoning']
+    epgdate = datetime.now().strftime('%Y-%m-%d')
+    session = requests.Session()
 
-with open('/var/www/html/iptv/epg.xml','at') as fhandle:
+    #节目单信息正则表达式获取
+    re_title = re.compile(r'<title>(.*?)</title>')
+    re_start = re.compile(r'<start_time>(.*?)</start_time>')
+    re_end = re.compile(r'<end_time>(.*?)</end_time>')
+
+    for n in channelID.keys():
+        api_url = "http://stream.suntv.tvmining.com/approve/epginfo?channel=%s&date=%s" % (n,epgdate)
+        epgdata = session.get(api_url).text
+
+        title = re_title.findall(epgdata)
+        start_time = re_start.findall(epgdata)
+        end_time = re_end.findall(epgdata)
+        start_time_epg = [datetime.fromtimestamp(int(st)).strftime('%Y%m%d%H%M')+'00' for st in start_time]
+        end_time_epg = [datetime.fromtimestamp(int(et)).strftime('%Y%m%d%H%M')+'00' for et in end_time]
+
+        fhandle.write('    <channel id="%s">\n' % channelID[n][0])
+        fhandle.write('        <display-name lang="cn">%s</display-name>\n' % channelID[n][1])
+        fhandle.write('    </channel>\n')
+
+        for i in range(len(title)):
+
+            fhandle.write('    <programme start="%s" stop="%s" channel="%s">\n' % (start_time_epg[i], end_time_epg[i], channelID[n][0]))
+            fhandle.write('        <title lang="cn">%s</title>\n' % title[i])
+            fhandle.write('    </programme>\n')
+
+
+#with open('/var/www/html/iptv/epg.xml','at') as fhandle:
+with open('epg.xml','at') as fhandle:
     fhandle.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     fhandle.write('<tv>\n')
-#    getChannelTVsou(fhandle, 'yangshi')
+#    getChannelTVsou(fhandle,cctv_channel_tvsou)
 #    getChannelTVsou(fhandle, 'weishi')
-    getChannelCNTV(fhandle, cctv_channel)
-    getChannelCNTV(fhandle, sat_channel)
+#    getChannelCNTV(fhandle, cctv_channel)
+#    getChannelCNTV(fhandle, sat_channel)
+    getChannelTVmining(fhandle,cctv_channel_tvmining)
+    getChannelTVmining(fhandle,sat_channel_tvmining)
     fhandle.write('</tv>')
-
