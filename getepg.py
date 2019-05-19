@@ -9,13 +9,13 @@ cctv_channel_tvsou = ['cctv-1','cctv-2','cctv-3','cctv-4','cctv-5','cctv5+','cct
 cctv_channel_tvmining = {'CCTV1HD':['cctv1','CCTV-1 HD'], 'CCTV2HD':['cctv2','CCTV-2 HD'], 'CCTV3HD':['cctv3','CCTV-3 HD'], \
         'CCTV4HD':['cctv4','CCTV-4 HD'], 'CCTV5HD':['cctv5','CCTV-5 HD'], 'CCTV5AHD':['cctv5plus','CCTV-5+ HD'], \
         'CCTV6HD':['cctv6','CCTV-6 HD'], 'CCTV7HD':['cctv7','CCTV-7 HD'], 'CCTV8HD':['cctv8','CCTV-8 HD'], \
-        'CCTV9HD':['cctv9','CCTV-9 HD'], 'CCTV10HD':['cctv10','CCTV-10 HD'], 'CCTV11HD':['cctv11','CCTV-11 HD'],\
+        'CCTV9HD':['cctvjilu','CCTV-9 HD'], 'CCTV10HD':['cctv10','CCTV-10 HD'], 'CCTV11':['cctv11','CCTV-11 HD'],\
         'CCTV12HD':['cctv12','CCTV-12 HD']}
 
 sat_channel_tvmining = {'HuBeiHD':['hubei','湖北卫视 HD'],'HuNanHD':['hunan','湖南卫视 HD'],'ZheJiangHD':['zhejiang','浙江卫视 HD'], \
         'JiangSuHD':['jiangsu','江苏卫视 HD'],'SHDongFangHD':['dongfang','东方卫视 HD'],'BTV1':['btv1','北京卫视 HD'], \
-        'GuangDongHD':['guangdong','广东卫视 HD'],'ShengZhengHD':['shenzhen','深圳卫视 HD'], 'HeiLongJiangHD':['heilongjiang','黑龙江卫视 HD'], \
-        'TianJingHD':['tianjin','天津卫视 HD'],'ShanDongHD':['shandong','山东卫视 HD'],'AnHuiHD':['anhui','安徽卫视 HD'], \
+        'GuangDongHD':['guangdong','广东卫视 HD'],'ShenZhenHD':['shenzhen','深圳卫视 HD'], 'HeiLongJiangHD':['heilongjiang','黑龙江卫视 HD'], \
+        'TianJinHD':['tianjin','天津卫视 HD'],'ShanDongHD':['shandong','山东卫视 HD'],'AnHuiHD':['anhui','安徽卫视 HD'], \
         'LiaoNingHD':['liaoning','辽宁卫视 HD']}
 
 sat_channel = ['hubei','hunan','zhejiang','jiangsu','dongfang','btv1','guangdong','shenzhen','heilongjiang','tianjin','shandong','anhui','liaoning']
@@ -156,8 +156,8 @@ def getChannelTVmining(fhandle,channelID):
             fhandle.write('    </programme>\n')
 
 
-#with open('/var/www/html/iptv/epg.xml','at') as fhandle:
-with open('epg.xml','at') as fhandle:
+with open('/var/www/html/iptv/epg.xml','at') as fhandle:
+#with open('epg.xml','at') as fhandle:
     fhandle.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     fhandle.write('<tv>\n')
 #    getChannelTVsou(fhandle,cctv_channel_tvsou)
