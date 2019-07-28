@@ -156,8 +156,8 @@ def getChannelTVmining(fhandle,channelID):
             fhandle.write('    </programme>\n')
 
 
-with open('/var/www/html/iptv/epg.xml','at') as fhandle:
-#with open('epg.xml','at') as fhandle:
+#with open('/var/www/html/iptv/epg.xml','at') as fhandle:
+with open('epg.xml','at') as fhandle:
     fhandle.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     fhandle.write('<tv>\n')
 #    getChannelTVsou(fhandle,cctv_channel_tvsou)
