@@ -3,7 +3,7 @@
 http://192.168.1.1:4022/rtp/239.254.96.96:8550
 #EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV-2HD
 http://192.168.1.1:4022/rtp/239.69.1.102:10250
-#EXTINF:-1 tvg-id="cctv2" tvg-logo="cctv2.png",CCTV-3HD
+#EXTINF:-1 tvg-id="cctv3" tvg-logo="cctv3.png",CCTV-3HD
 http://192.168.1.1:4022/rtp/239.69.1.122:10370
 #EXTINF:-1 tvg-id="cctv4" tvg-logo="cctv4.png",CCTV-4HD
 http://192.168.1.1:4022/rtp/239.69.1.138:10466
